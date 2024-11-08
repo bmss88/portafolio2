@@ -1,54 +1,36 @@
 import React from 'react';
-import { Text, StyleSheet, View, Image, Alert, Button, TouchableHighlight, Pressable } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { View, Button, Image, StyleSheet } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import HomeScreen from './home';
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
-  // Función para mostrar la alerta en cada botón
-  const showAlert = (message) => {
-    Alert.alert("Alerta", message);
-  };
-
   return (
-    <LinearGradient colors={['#FF5733', '#33C1FF']} style={styles.container}>
-      
-      {/* Imagen de la Municipalidad de Quinchao */}
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Main" component={MainScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
+
+const MainScreen = ({ navigation }) => {
+  return (
+    <LinearGradient colors={['#388E3C', '#A5D6A7']} style={styles.container}>
       <Image
-        source={require('./assets/LOGO ORIGINAL TRANSPARENCIA.png')}
-        style={styles.logoQuinchao}
+        source={require('./assets/logo1.png')}
+        style={styles.logo}
         resizeMode="contain"
       />
-
-      {/* Texto debajo de la imagen */}
-      <Text style={styles.text}>¡Este es un texto con gradiente de fondo!</Text>
-
-      {/* Botón estándar */}
       <Button
-        title="Mostrar Alerta"
-        onPress={() => showAlert("Este es el botón estándar")}
+        title="Ir a Home"
+        color="#4CAF50"
+        onPress={() => navigation.navigate("Home")}
       />
-
-      {/* Botón personalizado con TouchableHighlight */}
-      <TouchableHighlight
-        style={styles.touchableButton}
-        underlayColor="#DDDDDD"
-        onPress={() => showAlert("Este es el botón personalizado con TouchableHighlight")}
-      >
-        <Text style={styles.buttonText}>Botón con TouchableHighlight</Text>
-      </TouchableHighlight>
-
-      {/* Botón personalizado con Pressable e icono de Google */}
-      <Pressable
-        style={styles.pressableButton}
-        onPress={() => showAlert("Este es el botón con Pressable e icono")}
-      >
-        <Image
-          source={{ uri: 'https://storage.googleapis.com/gweb-uniblog-publish-prod/images/logo_Google_FullColor_3x_830x27.max-600x600.format-webp.webp' }}
-          style={styles.googleIcon}
-          resizeMode="contain"
-        />
-        <Text style={styles.buttonText}>Botón con Pressable e Icono</Text>
-      </Pressable>
-      
     </LinearGradient>
   );
 };
@@ -58,41 +40,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    padding: 20,
   },
-  logoQuinchao: {
-    width: 150,
-    height: 150,
+  logo: {
+    width: 250,
+    height: 250,
     marginBottom: 20,
-  },
-  text: {
-    fontSize: 20,
-    fontWeight: '600',
-    color: 'green',
-    marginBottom: 20,
-  },
-  touchableButton: {
-    backgroundColor: '#FF5733',
-    padding: 10,
-    marginTop: 20,
-    borderRadius: 5,
-  },
-  pressableButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#4285F4',
-    padding: 10,
-    marginTop: 20,
-    borderRadius: 5,
-  },
-  googleIcon: {
-    width: 20,
-    height: 20,
-    marginRight: 10,
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 16,
-    fontWeight: 'bold',
   },
 });
 
