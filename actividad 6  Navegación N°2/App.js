@@ -8,7 +8,7 @@ const App = () => {
     <LinearGradient colors={['#FFC1E3', '#E1F5FE']} style={styles.container}>
       {/* Imagen del álbum */}
       <Image
-        source={{ uri: 'https://static.wikia.nocookie.net/electropedia/images/7/79/Avicii_-_Hey_Brother_%28logo%29.jpg/revision/latest?cb=20170529204228&path-prefix=es' }}
+        source={{ uri: 'https://upload.wikimedia.org/wikipedia/en/e/e6/Avicii_Hey_Brother.jpg' }}
         style={styles.albumImage}
       />
 
