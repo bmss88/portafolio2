@@ -1,11 +1,12 @@
 import React from 'react';
 import { Text, StyleSheet, View } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const App = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Hola Mundo</Text>
-    </View>
+    <LinearGradient colors={['#FFDEE9', '#B5FFFC']} style={styles.container}>
+      <Text style={styles.text}>Hola</Text>
+    </LinearGradient>
   );
 };
 
@@ -14,7 +15,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#FFFFFF',
   },
   text: {
     fontSize: 24,
