@@ -24,7 +24,7 @@ const App = () => {
       {/* Botón estándar */}
       <Button
         title="Mostrar Alerta"
-        onPress={() => showAlert("Este es el botón estándar")}
+        onPress={() => showAlert("Este es el botón estandar")}
       />
 
       {/* Botón personalizado con TouchableHighlight */}
