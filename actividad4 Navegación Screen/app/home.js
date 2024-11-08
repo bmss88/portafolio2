@@ -21,7 +21,7 @@ const HomeScreen = () => { // Cambiado de App a HomeScreen
         underlayColor="#DDDDDD"
         onPress={() => showAlert("Este es el botón personalizado con TouchableHighlight")}
       >
-        <Text style={styles.buttonText}>Botón con TouchableHighlight</Text>
+        <Text style={styles.buttonText}>Boton con TouchableHighlight</Text>
       </TouchableHighlight>
       <Pressable
         style={styles.pressableButton}
