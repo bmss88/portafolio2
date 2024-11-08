@@ -19,7 +19,7 @@ const App = () => {
       />
 
       {/* Texto debajo de la imagen */}
-      <Text style={styles.text}>¡Este es un texto con gradiente de fondo!</Text>
+      <Text style={styles.text}>Este es el chico Barter</Text>
 
       {/* Botón estándar */}
       <Button
