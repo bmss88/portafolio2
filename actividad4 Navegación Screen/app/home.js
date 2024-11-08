@@ -2,32 +2,20 @@ import React from 'react';
 import { Text, StyleSheet, View, Image, Alert, Button, TouchableHighlight, Pressable } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-const App = () => {
-  // Función para mostrar la alerta en cada botón
+const HomeScreen = () => { // Cambiado de App a HomeScreen
   const showAlert = (message) => {
     Alert.alert("Alerta", message);
   };
 
   return (
     <LinearGradient colors={['#FF5733', '#33C1FF']} style={styles.container}>
-      
-      {/* Imagen de la Municipalidad de Quinchao */}
       <Image
         source={require('./assets/LOGO ORIGINAL TRANSPARENCIA.png')}
         style={styles.logoQuinchao}
         resizeMode="contain"
       />
-
-      {/* Texto debajo de la imagen */}
       <Text style={styles.text}>¡Este es un texto con gradiente de fondo!</Text>
-
-      {/* Botón estándar */}
-      <Button
-        title="Mostrar Alerta"
-        onPress={() => showAlert("Este es el botón estándar")}
-      />
-
-      {/* Botón personalizado con TouchableHighlight */}
+      <Button title="Mostrar Alerta" onPress={() => showAlert("Este es el botón estándar")} />
       <TouchableHighlight
         style={styles.touchableButton}
         underlayColor="#DDDDDD"
@@ -35,8 +23,6 @@ const App = () => {
       >
         <Text style={styles.buttonText}>Botón con TouchableHighlight</Text>
       </TouchableHighlight>
-
-      {/* Botón personalizado con Pressable e icono de Google */}
       <Pressable
         style={styles.pressableButton}
         onPress={() => showAlert("Este es el botón con Pressable e icono")}
@@ -48,7 +34,6 @@ const App = () => {
         />
         <Text style={styles.buttonText}>Botón con Pressable e Icono</Text>
       </Pressable>
-      
     </LinearGradient>
   );
 };
@@ -96,4 +81,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default HomeScreen; // Exporta como HomeScreen

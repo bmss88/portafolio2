@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Text, StyleSheet, View, Image, Alert, Button, TouchableHighlight, Pressable } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import HomeScreen from './Home'; // Importa la pantalla Home
+import HomeScreen from './home'; // Importa la pantalla Home
 
 const Stack = createNativeStackNavigator();
 
